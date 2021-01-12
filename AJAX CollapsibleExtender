@@ -1,0 +1,18 @@
+ASP.NET AJAX Control – Collapsible Panel Extender
+
+After the top line <%@ Page Title=... %> 
+Add this line: 
+  <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+Inside the form, do this:
+      <div class="divBoxM2">
+        <asp:Panel ID="panelTitle" runat="server"> 
+          <span class="Title3Blue">Panel title here</span>
+          <span class="span50R padLeft4pc"><asp:Image ID="imgSA" runat="server" ImageUrl="~/img/icon/collapse_blue.jpg" /></span>
+        </asp:Panel>
+        <asp:Panel ID="panelTarget" runat="server">
+          <!-- the panel that you like to hide or show-->          
+        </asp:Panel>
+        <ajax:CollapsiblePanelExtender ID="cpeSA" runat="server" TargetControlID="panelTarget" ExpandControlID="panelTitle" CollapseControlID="panelTitle" Collapsed="true"                  
+               SuppressPostBack="true ImageControlID ="imgSA" CollapsedImage="~/img/icon/collapse_blue.jpg" ExpandedImage="~/img/icon/expand_blue.jpg" 
+               CollapsedText="Click to view this function." ExpandedText="Click to hide this function." />
+      </div>
